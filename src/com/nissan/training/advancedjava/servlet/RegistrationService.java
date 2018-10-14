@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class RegistrationService {
 
-	public void insert(RegistrationBean bean)
+	public static void insert(RegistrationBean bean)
 	{
 		try {
 		    Class.forName("com.mysql.jdbc.Driver");

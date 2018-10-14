@@ -46,7 +46,7 @@ public class RegistrationController extends HttpServlet {
 		  String mobile = request.getParameter("mobile");
 		  String password = request.getParameter("password");
 		  
-		  RegistrationModel model = new RegistrationModel(name, email, mobile, password);
+		  RegistrationBean model = new RegistrationBean(name, email, mobile, password);
 		  
 		  try {
 			model.validateFields();
@@ -58,7 +58,7 @@ public class RegistrationController extends HttpServlet {
 			   return;
 		}
 		  
-		  model.insert();
+		  RegistrationService.insert(model);
 		  
 		  RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 		  rd.forward(request, response);

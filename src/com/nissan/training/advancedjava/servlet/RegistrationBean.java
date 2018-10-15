@@ -76,9 +76,9 @@ public class RegistrationBean {
 			throw new InvalidFieldException("Please enter valid name");
 		if(!isEmailValid(email))
 			throw new InvalidFieldException("Please enter valid email");
-		if(!isEmailValid(mobile))
+		if(!isMobileValid(mobile))
 			throw new InvalidFieldException("Please enter valid mobile");
-		if(!isEmailValid(password))
+		if(!isPasswordValid(password))
 			throw new InvalidFieldException("Password - minimum 6 characters");
 		
 	}

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class RegistrationController
  */
-@WebServlet("/RegistrationController")
+
 public class RegistrationController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -41,12 +41,13 @@ public class RegistrationController extends HttpServlet {
 		//doGet(request, response);
 		response.setContentType("text/html");
 		  PrintWriter out = response.getWriter();
-		  String name = request.getParameter("fullname");
+		  String name = request.getParameter("name");
 		  String email = request.getParameter("email");
 		  String mobile = request.getParameter("mobile");
 		  String password = request.getParameter("password");
 		  
 		  RegistrationBean model = new RegistrationBean(name, email, mobile, password);
+		  System.out.println("Model mobile: " + model.getMobile());
 		  
 		  try {
 			model.validateFields();
